@@ -18,12 +18,12 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <img className="h-16 w-auto" src={logo} alt="Logo" />
+             <Link to={'/'}> <img className="h-16 w-auto" src={logo} alt="Logo" /></Link>
             </div>
             <div className="hidden md:block items-center">
               <div className="ml-10 flex space-x-4">
@@ -94,7 +94,7 @@ const Header = () => {
           <Link to="/about" className="text-black hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">About</Link>
           <Link to="/contact" className="text-black hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Contact</Link>
           <div className="ml-4 flex items-center space-x-4 mt-4">
-            <Link to="/signup" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium"><FiUser /></Link>
+            <Link to="/login" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium"><FiUser /></Link>
             <Link to="/cart" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium"><FiShoppingCart /></Link>
           </div>
         </div>
