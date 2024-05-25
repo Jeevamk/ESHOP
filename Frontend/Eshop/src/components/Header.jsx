@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX } from 'react-icons/fi';
 import logo from '../assests/logo/logo.png';
 
-const Navbar = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartItemCount, setCartItemCount] = useState(1); 
+  const [cartItemCount, setCartItemCount] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log('Searching for:', searchQuery);
   };
 
   return (
@@ -29,14 +35,23 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <div className="relative">
-              <input type="text" className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-black w-full" placeholder="Search..." />
-              <button className="absolute right-1 top-1 mt-2 mr-2">
-                <FiSearch className="h-4 w-4 text-gray-800" />
-              </button>
-            </div>
+            <form onSubmit={handleSearchSubmit}>
+              <div className="relative flex items-center">
+                <input
+                  type="text"
+                  className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-black w-full"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button type="submit" className="bg-black text-white px-2 py-2 rounded-md ml-2">Search
+                </button>
+              </div>
+            </form>
+
+
             <div className="ml-4 flex items-center space-x-4">
-              <Link to="/signup" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium"><FiUser /></Link>
+              <Link to="/login" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium"><FiUser /></Link>
               <div className="relative">
                 <Link to="/cart" className="text-black hover:text-blue-700 px-3 py-2 rounded-md text-xl font-medium">
                   <FiShoppingCart />
@@ -60,12 +75,20 @@ const Navbar = () => {
 
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <div className="relative">
-            <input type="text" className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full" placeholder="Search..." />
-            <button className="absolute right-0 top-0 mt-2 mr-2">
-              <FiSearch className="h-4 w-4 text-gray-400" />
-            </button>
-          </div>
+          <form onSubmit={handleSearchSubmit}>
+            <div className="relative">
+              <input
+                type="text"
+                className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button type="submit" className="absolute right-1 top-1 mt-2 mr-2">
+                <FiSearch className="h-4 w-4 text-gray-400" />
+              </button>
+            </div>
+          </form>
           <Link to="/" className="text-black hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Home</Link>
           <Link to="/shop" className="text-black hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">Shop</Link>
           <Link to="/about" className="text-black hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium">About</Link>
@@ -80,4 +103,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
