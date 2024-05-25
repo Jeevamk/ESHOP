@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -9,7 +9,7 @@ const Signup = () => {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Add your signup logic here
+    
     console.log('Signing up with:', username, email, password, confirmPassword);
   };
 

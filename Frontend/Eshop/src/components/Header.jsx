@@ -44,8 +44,8 @@ const Header = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <button type="submit" className="bg-black text-white px-2 py-2 rounded-md ml-2">Search
-                </button>
+             <button type="submit" className="border-2 border-black text-black font-semibold px-2 py-2 rounded-md ml-2 hover:bg-blue-700 hover:text-white hover:border-blue-700">Search</button>
+              
               </div>
             </form>
 
