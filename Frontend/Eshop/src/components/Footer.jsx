@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="mb-8 sm:mb-0">
             <h1 className="text-lg font-bold mb-4">Eshop</h1>
-            <p>Your one-stop shop for all your electronic needs. Discover the latest gadgets, from headphones to laptops and more!</p>
+            <p>Eshop for all your electronic needs. Discover the latest gadgets, from headphones to laptops and more!</p>
           </div>
           <div className="mb-8 sm:mb-0">
             <h2 className="text-lg font-bold mb-4">Products</h2>

@@ -1,5 +1,5 @@
 
-
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const CategoryCard = ({ category, description, image }) => {
@@ -10,7 +10,7 @@ const CategoryCard = ({ category, description, image }) => {
           <p className='mb-[2px] font-gray-400'>{description}</p>
           <p className='text-2xl font-semibold mb-[2px]'>With</p>
           <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>{category}</p>
-          <button className='bg-blue-400 text-white rounded-md p-1'>Browse</button>
+          <Link to='/shop' className='inline-block bg-blue-400 text-white rounded-md p-1'>Browse</Link>
         </div>
       </div>
       <img src={image} alt={category} className='w-[320px] absolute bottom-0' />
