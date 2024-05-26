@@ -38,7 +38,7 @@ const ProductList = () => {
 
     return (
         <div className="flex">
-            <nav className="w-64 bg-gray-200 p-4">
+            <div className="w-64 bg-gray-200 p-4">
                 <div className="flex justify-between mb-4">
                     <h2 className="text-lg font-semibold">Filters</h2>
                     <button onClick={() => setFilterOpen(!filterOpen)}>
@@ -55,7 +55,7 @@ const ProductList = () => {
                         <FaSort />
                     </button>
                 </div>
-            </nav>
+            </div>
             <div className="container mx-auto px-4 lg:px-8 mt-14">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                     {products.map(product => (
