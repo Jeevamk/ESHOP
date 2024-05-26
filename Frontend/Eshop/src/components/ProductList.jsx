@@ -1,21 +1,21 @@
-import React from 'react';
-import { FaEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { FaEye, FaFilter, FaSort,FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const { id, name, price, imageUrl } = product;
 
     return (
-        <div className="max-w-xs rounded overflow-hidden shadow-xl mx-auto mt-16 product-card cursor-grabbing">
+        <div className="max-w-xs rounded overflow-hidden shadow-xl mx-auto mt-6 product-card">
             <img src={imageUrl} alt={name} className="w-full h-56 object-cover hover:scale-105 transition-transform duration-300" />
             
-            <div className="px-4 py-2 bg-white bg-opacity-75 text-white flex justify-between items-center">
+            <div className="px-4 py-2 bg-white bg-opacity-75 text-black flex justify-between items-center">
                 <div>
-                    <h2 className="text-lg font-semibold text-black">{name}</h2>
-                    <p className="text-sm text-black">{price}</p>
+                    <h2 className="text-lg font-semibold">{name}</h2>
+                    <p className="text-sm">{price}</p>
                 </div>
-                <Link to={`/product/${id}`} className="text-black flex items-center">
-                    <FaEye className="mr-2" />
+                <Link to={'/cart'} className="flex items-center">
+                    <FaShoppingCart className="mr-2" />
                 </Link>
             </div>
         </div>
@@ -23,6 +23,8 @@ const ProductCard = ({ product }) => {
 };
 
 const ProductList = () => {
+    const [filterOpen, setFilterOpen] = useState(false);
+
     const products = [
         { id: 1, name: 'iphone-14', price: '$20.99', imageUrl: 'https://res.cloudinary.com/dsqsfves6/image/upload/v1716719768/png-transparent-iphone-14_saecun.png' },
         { id: 2, name: 'Bose QuietComfort 35 II', price: '$30.49', imageUrl: 'https://res.cloudinary.com/dsqsfves6/image/upload/v1716700669/sony_cgkjmx.png' },
@@ -35,14 +37,33 @@ const ProductList = () => {
     ];  
 
     return (
-        <div className="container mx-auto px-4 lg:px-8 mt-14">
-            <h2 className="text-3xl font-bold mb-4 uppercase text-center">New Arrivals</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                {products.map(product => (
-                    <div key={product.id} className="mb-4">
-                        <ProductCard product={product} />
+        <div className="flex">
+            <nav className="w-64 bg-gray-200 p-4">
+                <div className="flex justify-between mb-4">
+                    <h2 className="text-lg font-semibold">Filters</h2>
+                    <button onClick={() => setFilterOpen(!filterOpen)}>
+                        <FaFilter />
+                    </button>
+                </div>
+                {filterOpen && (
+                    <div className="flex flex-col space-y-2">
                     </div>
-                ))}
+                )}
+                <div className="flex justify-between mt-8">
+                    <h2 className="text-lg font-semibold">Sort</h2>
+                    <button>
+                        <FaSort />
+                    </button>
+                </div>
+            </nav>
+            <div className="container mx-auto px-4 lg:px-8 mt-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    {products.map(product => (
+                        <div key={product.id} className="mb-4">
+                            <ProductCard product={product} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
