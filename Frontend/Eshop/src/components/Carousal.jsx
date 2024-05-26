@@ -45,7 +45,7 @@ const CarousalData = [
     'title': "Wireless",
     "description": "World-class noise cancellation with built-in Google Assistant",
     "price": 299.99,
-    "image": "https://res.cloudinary.com/dsqsfves6/image/upload/v1716700786/sony-removebg_eb7ywp.png"
+    "image": "https://res.cloudinary.com/dsqsfves6/image/upload/v1716700669/sony_cgkjmx.png"
   }
 ];
 
