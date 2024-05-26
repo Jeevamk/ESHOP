@@ -23,8 +23,8 @@ const Footer = () => {
           </div>
           <div className="mb-8 sm:mb-0">
             <h2 className="text-lg font-bold mb-4">Contact Us</h2>
-            <p>123 Street, City, Country</p>
-            <p>Email: example@example.com</p>
+            <p>123 Street, Calicut, India</p>
+            <p>Email: eshop@gmail.com</p>
             <p>Phone: +1234567890</p>
           </div>
           <div className="mb-8 sm:mb-0">
