@@ -4,7 +4,7 @@ import React from 'react';
 
 const CategoryCard = ({ category, description, image }) => {
   return (
-    <div className='py-10 pl-5 pr-5 bg-gradient-to-br from-black/90 to-black/70 text-white rounded-3xl relative h-[320px]'>
+    <div className='py-10 pl-5 pr-5 bg-gradient-to-br from-black/90 to-black/70 text-white rounded-3xl relative h-[320px] mt-11'>
       <div>
         <div className='mb-4'>
           <p className='mb-[2px] font-gray-400'>{description}</p>
