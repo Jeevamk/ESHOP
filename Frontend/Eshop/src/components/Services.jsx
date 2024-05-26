@@ -30,8 +30,8 @@ const ServiceData = [
 
 const Services = () => {
     return (
-        <div className="container mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 gap-y-8 ">
+        <div className="container ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 gap-y-8 m-14">
                 {ServiceData.map((data) => (
                     <div key={data.id} className="flex flex-col items-center ">
                         <div className="mb-2">{data.icon}</div>
