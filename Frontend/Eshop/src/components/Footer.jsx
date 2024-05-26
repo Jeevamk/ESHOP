@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
   return (
@@ -8,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="mb-8 sm:mb-0">
             <h1 className="text-lg font-bold mb-4">Eshop</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Your one-stop shop for all your electronic needs. Discover the latest gadgets, from headphones to laptops and more!</p>
           </div>
           <div className="mb-8 sm:mb-0">
             <h2 className="text-lg font-bold mb-4">Products</h2>
@@ -28,15 +30,15 @@ const Footer = () => {
           <div className="mb-8 sm:mb-0">
             <h2 className="text-lg font-bold mb-4">Follow Us</h2>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-gray-400">
+              <Link to='/' className="text-white hover:text-gray-400">
                 <FaFacebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400">
+              </Link>
+              <Link to='/' className="text-white hover:text-gray-400">
                 <FaInstagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400">
+              </Link>
+              <Link to='/' className="text-white hover:text-gray-400">
                 <FaTwitter className="h-6 w-6" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
